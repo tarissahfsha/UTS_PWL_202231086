@@ -60,9 +60,12 @@
                                 <td>{{ $wilayah->nama_wilayah }}</td>
                                 <td>{{ $wilayah->kecamatan }}</td>
                                 <td>{{ $wilayah->kelurahan }}</td>
-                                <td>
-                                    <span class="badge badge-info">{{ $wilayah->pemadamans->count() }}</span>
-                                </td>
+                               <td>
+    <span class="badge" style="background-color: {{ $wilayah->pemadamans->count() > 0 ? '#17a2b8' : '#ffc107' }}; color: white;">
+        {{ $wilayah->pemadamans->count() }}
+    </span>
+</td>
+
                                 <td>
                                     <a href="{{ route('wilayah.show', $wilayah->id) }}" class="btn btn-info btn-sm">
                                         <i class="fas fa-eye"></i>
